@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <fstream>
 #include <vector>
 #include <algorithm>
@@ -7,12 +7,12 @@
 
 using namespace std;
 
-// Функция для проверки, является ли символ буквой
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїСЂРѕРІРµСЂРєРё, СЏРІР»СЏРµС‚СЃСЏ Р»Рё СЃРёРјРІРѕР» Р±СѓРєРІРѕР№
 bool isLetter(char c) {
     return isalpha(static_cast<unsigned char>(c));
 }
 
-// Функция для разделения строки на слова
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ СЂР°Р·РґРµР»РµРЅРёСЏ СЃС‚СЂРѕРєРё РЅР° СЃР»РѕРІР°
 vector<string> splitIntoWords(const string& str) {
     vector<string> words;
     string word;
@@ -34,24 +34,24 @@ vector<string> splitIntoWords(const string& str) {
 
 int main() {
     setlocale(LC_ALL, "ru");
-    const string filename = "input1.txt"; // Имя файла с заданными словами
+    const string filename = "input1.txt"; // РРјСЏ С„Р°Р№Р»Р° СЃ Р·Р°РґР°РЅРЅС‹РјРё СЃР»РѕРІР°РјРё
     int n;
     
-    // Запрос длины слов
-    cout << "Введите длину слов (n): ";
+    // Р—Р°РїСЂРѕСЃ РґР»РёРЅС‹ СЃР»РѕРІ
+    cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ СЃР»РѕРІ (n): ";
     cin >> n;
     
-    // Открытие файла
+    // РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
     ifstream file(filename);
     if (!file.is_open()) {
-        cerr << "Не удалось открыть файл." << endl;
+        cerr << "РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»." << endl;
         return 1;
     }
     
     vector<string> words;
     string line;
     
-    // Чтение файла построчно
+    // Р§С‚РµРЅРёРµ С„Р°Р№Р»Р° РїРѕСЃС‚СЂРѕС‡РЅРѕ
     while (getline(file, line)) {
         vector<string> lineWords = splitIntoWords(line);
         for (const string& word : lineWords) {
@@ -63,11 +63,11 @@ int main() {
     
     file.close();
     
-    // Сортировка слов в алфавитном порядке
+    // РЎРѕСЂС‚РёСЂРѕРІРєР° СЃР»РѕРІ РІ Р°Р»С„Р°РІРёС‚РЅРѕРј РїРѕСЂСЏРґРєРµ
     sort(words.begin(), words.end());
     
-    // Вывод слов
-    cout << "Слова длиной " << n << " в алфавитном порядке:" << endl;
+    // Р’С‹РІРѕРґ СЃР»РѕРІ
+    cout << "РЎР»РѕРІР° РґР»РёРЅРѕР№ " << n << " РІ Р°Р»С„Р°РІРёС‚РЅРѕРј РїРѕСЂСЏРґРєРµ:" << endl;
     for (const string& word : words) {
         cout << word << endl;
     }
