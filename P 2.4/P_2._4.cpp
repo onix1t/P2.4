@@ -34,6 +34,10 @@ vector<string> splitIntoWords(const string& str) {
 
 int main() {
     setlocale(LC_ALL, "ru");
+
+    cout << "Практика 4\n";
+    cout << "\nЗадание 1\n";
+    
     const string filename = "input1.txt"; // Имя файла с заданными словами
     int n;
     
@@ -71,6 +75,50 @@ int main() {
     for (const string& word : words) {
         cout << word << endl;
     }
+
+    cout << "\nЗадание 2\n";
     
+    const string inputFilename = "input2.txt";  // Имя входного файла
+    const string outputFilename = "output2.txt"; // Имя выходного файла
+
+    // Открытие входного файла
+    ifstream inputFile(inputFilename);
+    if (!inputFile.is_open()) {
+        cerr << "Не удалось открыть входной файл." << endl;
+        return 1;
+    }
+
+    vector<int> numbers;
+    int number;
+
+    // Чтение чисел из входного файла
+    while (inputFile >> number) {
+        numbers.push_back(number);
+    }
+    inputFile.close();
+
+    // Открытие выходного файла
+    ofstream outputFile(outputFilename);
+    if (!outputFile.is_open()) {
+        cerr << "Не удалось открыть выходной файл." << endl;
+        return 1;
+    }
+
+    // Запись квадратов чисел в выходной файл
+    for (int num : numbers) {
+        outputFile << num * num << " ";
+    }
+    outputFile.close();
+
+    cout << "Квадраты чисел записаны в выходной файл." << endl;
+    cout << "\nОчистить выходной файл? (Y/N)\n";
+    char clearCom;
+    cin >> clearCom;
+    if (clearCom == 'Y' || clearCom == 'y')
+    {
+        ofstream outputFile(outputFilename, ios::trunc);
+        cout << "Выходной файл очищен";
+    }
+
     return 0;
 }
