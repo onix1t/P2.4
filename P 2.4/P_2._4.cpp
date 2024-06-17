@@ -35,8 +35,8 @@ vector<string> splitIntoWords(const string& str) {
 int main() {
     setlocale(LC_ALL, "ru");
 
-    cout << "Практика 4\n";
-    cout << "\nЗадание 1\n";
+    cout << "Практика 4 | Вариант 22\r\n";
+    cout << "\r\nЗадание 1\r\n";
     
     const string filename = "input1.txt"; // Имя файла с заданными словами
     int n;
@@ -76,7 +76,7 @@ int main() {
         cout << word << endl;
     }
 
-    cout << "\nЗадание 2\n";
+    cout << "\r\nЗадание 2\r\n";
     
     const string inputFilename = "input2.txt";  // Имя входного файла
     const string outputFilename = "output2.txt"; // Имя выходного файла
@@ -111,7 +111,7 @@ int main() {
     outputFile.close();
 
     cout << "Квадраты чисел записаны в выходной файл." << endl;
-    cout << "\nОчистить выходной файл? (Y/N)\n";
+    cout << "\r\nОчистить выходной файл? (Y/N)\r\n";
     char clearCom;
     cin >> clearCom;
     if (clearCom == 'Y' || clearCom == 'y')
